@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://2094780632.github.io/2020/02/01/blog-building-proceess/">
+    <link itemprop="mainEntityOfPage" href="https://2094780632.github.io/2020/02/01/%E4%BD%BF%E7%94%A8Hexo+GithubPage%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pebble">
@@ -280,7 +280,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/02/01/blog-building-proceess/" itemprop="url">使用Hexo+GithubPage搭建静态博客</a></h1>
+                <a class="post-title-link" href="/2020/02/01/%E4%BD%BF%E7%94%A8Hexo+GithubPage%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" itemprop="url">使用Hexo+GithubPage搭建静态博客</a></h1>
         
 
         <div class="post-meta">
@@ -332,66 +332,16 @@
       
         
           
-            <p>Hexo是一个 快速、简洁且高效的博客框架 。对于大多数学生而言，没钱没技术，成本低、方便快捷成为了学生们的第一需求。所以方便的Hexo和免费的GithubPage成为了许多学生们的选择。接下来，本文就分享一下小石子搭建博客的经验。</p>
-<p>//我的电脑系统为Windows10，装有node.js，git。</p>
-<p>若我说的有不对之处，还请反馈给我，我将及时更改，谢谢！</p>
-<h2 id="第一步：获取Hexo"><a href="#第一步：获取Hexo" class="headerlink" title="第一步：获取Hexo"></a>第一步：获取Hexo</h2><h3 id="①安装"><a href="#①安装" class="headerlink" title="①安装"></a>①安装</h3><p>一般的，选择好你想安装Hexo的位置，在装有node.js的环境下，直接使用指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<p>即可获取Hexo到当前目录。</p>
-<ol>
-<li><pre><code class="bash">npx hexo &lt;<span class="built_in">command</span>&gt;
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 将Hexo所在的目录下的 &#96;node_modules&#96; 添加到环境变量之中即可直接使用 &#96;hexo &#96;：</span><br><span class="line"></span><br><span class="line">   &#96;&#96;&#96;bash</span><br><span class="line">   echo &#39;PATH&#x3D;&quot;$PATH:.&#x2F;node_modules&#x2F;.bin&quot;&#39; &gt;&gt; ~&#x2F;.profile</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ol>
-<h3 id="②配置Hexo"><a href="#②配置Hexo" class="headerlink" title="②配置Hexo"></a>②配置Hexo</h3><p>安装完Hexo，在你想建站的文件夹里执行以下指令初始化Hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>创建完成后，应有以下文件</p>
-<blockquote>
-<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><p>网站的 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置</a> 信息，您可以在此配置大部分的参数。</p>
-<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><p>应用程序的信息。<a href="https://ejs.co/" target="_blank" rel="noopener">EJS</a>, <a href="http://learnboost.github.io/stylus/" target="_blank" rel="noopener">Stylus</a> 和 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> renderer 已默认安装，您可以自由移除。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package.json&#123;  "name": "hexo-site",  "version": "0.0.0",  "private": true,  "hexo": &#123;    "version": ""  &#125;,  "dependencies": &#123;    "hexo": "^3.8.0",    "hexo-generator-archive": "^0.1.5",    "hexo-generator-category": "^0.1.3",    "hexo-generator-index": "^0.2.1",    "hexo-generator-tag": "^0.2.0",    "hexo-renderer-ejs": "^0.3.1",    "hexo-renderer-stylus": "^0.3.3",    "hexo-renderer-marked": "^0.3.2",    "hexo-server": "^0.3.3"  &#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4><p><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">模版</a> 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</p>
-<p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
-<h4 id="source"><a href="#source" class="headerlink" title="source"></a>source</h4><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
-<h4 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h4><p><a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p>
-</blockquote>
-<p>创建完成后，在 <code>_config.yml</code>中可以修改大部分的Hexo配置。</p>
-<p>配置的具体部分参考<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">官方文文档</a></p>
-<h2 id="第二步：使用Hexo搭建博客"><a href="#第二步：使用Hexo搭建博客" class="headerlink" title="第二步：使用Hexo搭建博客"></a>第二步：使用Hexo搭建博客</h2><p>当你配置好了上面的一切时，就可以认识一些基础的指令开始使用Hexo了。</p>
-<p>常用指令有 : </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br><span class="line">hexo g -d</span><br><span class="line">hexo s</span><br><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>对应作用为：</p>
-<p>新建以&lt;title&gt;为标题的[layout]类型文件</p>
-<p>生成静态文件并立即部署网站</p>
-<p>启动服务器。 默认情况下，访问网址为： <code>http://localhost:4000/</code>。 </p>
-<p>清除缓存文件和已生成的静态文件。</p>
-<p>更多指令见<a href="https://hexo.io/zh-cn/docs/commands" target="_blank" rel="noopener">官网文档</a></p>
-<p>一般的写作新文章顺序是</p>
-<p>新建文章 -&gt; 编辑文章 -&gt; (清除缓存及已有页面 -&gt;) 生成静态页面 -&gt; 部署网站</p>
-<h2 id="第三步：将Hexo部署到GithubPage"><a href="#第三步：将Hexo部署到GithubPage" class="headerlink" title="第三步：将Hexo部署到GithubPage"></a>第三步：将Hexo部署到GithubPage</h2><p>首先你要有一个github账户，然后新建一个按 yourname.github.io 命名格式的仓库。Github会帮你开启Github Page。通过 <a href="http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a> 可访问你的Github Page。  </p>
-<p>然后你需要安装<code>hexo-deployer-git</code>插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>接下来配置你的<code>_config.yml</code>文件</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
-
-<p>这样你就可以通过该deploy指令发布到你的GithubPage上了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>作为一个没钱的学生党，只能靠硬核的技术来弥补。那么免费的GithubPage怎么能不用用呢？这样好的域名免费送你，还免费让你能发布网站在外网，多良心！利用静态博客Hexo，搭配一个自己的博客，这感觉真的很棒。拥有一个自己的博客多好，不需要什么简书、有道云笔记、OneNote的账户，只需要一个作为技术宅所必备的Github账户，这太好了。对于没钱的技术宅，我十分推荐这种做法。</p>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>Hexo官网 : <a href="hexo.io">hexo.io</a></p>
-<p>Hexo中文帮助文档 :  <a href="hexo.io/zh-cn/docs/">hexo.io/zh-cn/docs/</a></p>
-<p>Node.js安装 : <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></p>
-<p>Git安装 : <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></p>
-
-          
+          Hexo是一个 快速、简洁且高效的博客框架 。对于大多数学生而言，没钱没技术，成本低、方便快捷成为了学生们的第一需求。所以方便的Hexo和免费的GithubPage成为了许多学生们的选择。接下来，本文就分享一下小石子搭建博客的经验。
+//我的电脑系统为Windows10，装有node.js，git。
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/01/%E4%BD%BF%E7%94%A8Hexo+GithubPage%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -509,12 +459,19 @@
       
         
           
-            <p>Hello World, I am a little Pebble.</p>
-<p>你好世界，我是一块小小的鹅卵石。</p>
-<p>This is my little blog, welcome.</p>
-<p>这里是我的小博客，欢迎。</p>
+          Hello World, I am a little Pebble.
+你好世界，我是一块小小的鹅卵石。
+This is my little blog, welcome.
+这里是我的小博客，欢迎。
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/19/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
